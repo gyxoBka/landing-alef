@@ -2,7 +2,8 @@
 product display page using vanilla JS only.
 Here is an approximate concept of organizing the structure of this page.
 
-![](https://s3.gifyu.com/images/alef-desk.gif)
+[Full page demonstration](https://s3.gifyu.com/images/alef-desk.gif)
+
 ![](https://s3.gifyu.com/images/alef-mob.gif)
 
 ## Installation
