@@ -635,7 +635,7 @@ function showLikedNotify(type = true, header = "", body = "") {
     notifyWrapper.appendChild(notify);
 
     notify.innerHTML = `
-        <div class="notify__close"><img src="/assets/images/close.svg" alt="закрыть"></div>
+        <div class="notify__close"><img src="assets/images/close.svg" alt="закрыть"></div>
         <div class="notify__header">${header}</div>
         <div class="notify__body">${body}</div>
     </div>`;
