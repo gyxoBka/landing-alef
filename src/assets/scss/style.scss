@@ -1,0 +1,40 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor/reset";
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+body {
+    background-color: #fff;
+    font-family: Montserrat;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 300;
+    color: $white;
+
+    overflow-x: hidden;
+}
+
+@import "blocks/wrapper";
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/burger";
+@import "blocks/footer";
+@import "blocks/form";
+@import "blocks/sort";
+@import "blocks/card-wrapper";
+@import "blocks/card";
+@import "blocks/notify";
+@import "blocks/show-more";
+@import "blocks/scroll-btn";

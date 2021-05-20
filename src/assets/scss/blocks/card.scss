@@ -1,0 +1,177 @@
+.card{
+    display: block;
+
+    width: 38rem;
+
+    margin-bottom: 2.7rem;
+
+    @include breakpoint($maxWidth){
+        width: 35rem;
+    }
+    
+    @include breakpoint($tablet-bp){
+        width: 30rem;
+        margin-bottom: 2rem;
+    }
+
+    @include breakpoint($mobile-bp){
+        width: 30rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.card__header{
+    display: block;
+
+    width: 100%;
+    height: 26.4rem;
+
+    position: relative;
+    z-index: 0;
+}
+
+.card__img{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.card__discount{
+    display: block;
+    
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+
+    background-color: $red;
+    border-radius: 1rem;
+
+    position: absolute;
+    top: 3.4rem;
+    left: 3.4rem;
+    z-index: 1;
+}
+
+.card__like{
+    display: block;
+
+    opacity: .5;
+    cursor: pointer;
+
+    transition: opacity .2s linear;
+
+    position: absolute;
+    top: 3.4rem;
+    right: 3.4rem;
+    z-index: 1;
+
+    &:hover,
+    &:focus{
+        opacity: .7;
+    }
+
+    &_liked{
+        opacity: 1;
+    }
+}
+
+.card__body{
+    display: block;
+
+    padding: 2.9rem;
+
+    color: $black;
+
+    background-color: #F3F3F3;
+}
+
+.card__title{
+    display: block;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.card__features{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 2.2rem;
+    padding-left: 1.8rem;
+
+    font-size: 1.2rem;
+
+    border-left: 4px solid #6EBBD3;
+}
+
+.card__color{
+    width: 8.9rem;
+}
+
+.card_text-bold{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.card__features-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card__price{
+    display: block;
+
+    margin-top: 1.6rem;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.card__btn{
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+    height: 6.5rem;
+
+    padding: 0;
+    margin: 0;
+
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    background-color: #6EBBD3;
+    border-radius: 0 0 1rem 1rem;
+
+    transition: background-color .2s linear;
+
+    cursor: pointer;
+
+    &:hover{
+        background-color: lighten(#6EBBD3, 5%);
+    }
+
+    &:active{
+        background-color: darken(#6EBBD3, 2%);
+    }
+
+    &.unavailable{
+        background-color: #1F2021;
+        cursor: not-allowed;
+    }
+}

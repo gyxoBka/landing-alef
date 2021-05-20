@@ -1,0 +1,48 @@
+@mixin font-face($font-family, $url, $weight) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('../fonts/#{$url}.woff2') format('woff2'),
+		url('../#{$url}.woff') format('woff'),
+        url('../fonts/#{$url}.ttf') format('truetype');
+        
+		font-weight: #{$weight};
+		font-display: swap;
+		font-style: normal;
+	}
+}
+
+@mixin breakpoint($bp) {
+    @media (max-width: $bp) {
+        @content;
+    }
+}
+
+@mixin adaptive-font($pcSize, $mobSize){
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (max-width: 767px){
+        font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthNum}));
+    }
+    @media (min-width: 767px){
+        font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthNum}));
+    }
+}
+
+@mixin fade-in-ellipsis($box-width, $right-width, $bg-color) {
+    position: relative;
+    max-width: calc(100% - #{$right-width});
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: calc(#{$box-width} - #{$right-width} - 30px);
+        height: 100%;
+        width: 30px;
+        background-image : linear-gradient(to right, rgba($bg-color, 0), $bg-color);
+    }
+}

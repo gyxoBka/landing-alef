@@ -1,0 +1,104 @@
+.nav{
+    display: block;
+
+    order: 3;
+
+    @include breakpoint($tablet-bp){
+        width: 100%;
+        max-width: 25rem;
+        margin-left: -1rem;
+        margin-top: 20rem;
+
+        background: linear-gradient(150deg, #1b1b1b, rgba(#1b1b1b, .7), #1b1b1b);
+        box-shadow: 5px 0 15px rgba($black, .3);
+        border-right: inset 1px rgba($white, .1);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: all .3s ease 0s;
+
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.show-sidebar{
+    @include breakpoint($tablet-bp){
+        .nav{
+            position: absolute;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0px);
+            z-index: $z-index-header;
+        }
+
+        .nav__shadow{
+            width: 100%;
+            height: 100%;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: $z-index-content;
+        }
+
+        .nav__item{
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 0px 0px;
+            text-align: center;
+
+            &:last-child{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.nav__list{
+    display: flex;
+
+    @include breakpoint($tablet-bp){
+        flex-direction: column;
+    }
+}
+
+.nav__item{
+    position: relative;
+
+    margin-right: 6rem;
+
+    @include breakpoint($tablet-bp){
+        margin-right: 0;
+    }
+}
+
+.nav__link{
+    display: block;
+    padding: 1.35rem 0;
+
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+    color: $white;
+    text-decoration: none;
+
+    transition: color .2s linear,
+                transform .2s linear;
+
+    &:hover, 
+    &:focus{
+        color: $red;
+        transform: scale(1.1);
+        outline: none;
+    }
+
+    @include breakpoint($tablet-bp){
+        padding: 1.1rem 0;
+
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}

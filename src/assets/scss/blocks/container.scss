@@ -1,0 +1,23 @@
+.container{
+    display: block;
+    max-width: $maxWidth;
+    margin: 0 auto;
+
+    @include breakpoint($maxWidth){
+        padding: 0 1rem;
+    }
+
+    &--header{
+        display: flex;
+        align-items: center;
+
+        height: 8rem;
+
+        position: relative;
+        z-index: 1;
+    }
+
+    &--footer{
+        padding: 0;
+    }
+}

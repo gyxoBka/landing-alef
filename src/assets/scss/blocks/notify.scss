@@ -1,0 +1,109 @@
+.notify{
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: 1000;
+}
+
+.notify__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 25rem;
+    min-height: 10rem;
+
+    margin-top: 1rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    
+    color: $black;
+
+    border-radius: 1rem;
+    background-color: #F3F3F3;
+    box-shadow: 0 4px 4px 0 rgba($black, .25);
+
+    opacity: 1;
+    animation: notify 1s linear;
+
+    position: relative;
+
+    &:first-child{
+        margin-top: 2rem;
+    }
+    
+    &--add{
+        background: linear-gradient(90deg, rgba(#6EBBD3, .9), #F3F3F3);
+    }
+
+    &--rm{
+        background: linear-gradient(90deg, rgba($red, .9), #F3F3F3);
+    }
+
+    &--remove{
+        animation: notify-hide .5s linear;
+        opacity: 0;
+    }
+}
+
+@keyframes notify{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes notify-hide{
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.notify__header{
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.notify__body{
+    font-weight: 1.6rem;
+    font-weight: 400;
+}
+
+.notify__close{
+    display: block;
+
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    opacity: .3;
+
+    transition: transform .2s linear,
+    opacity .2s linear;
+
+    &:hover{
+        transform: rotate(90deg);
+        opacity: 1;
+    }
+
+    img {
+        display: block;
+
+        width: 1rem;
+        height: 1rem;    
+    }
+}

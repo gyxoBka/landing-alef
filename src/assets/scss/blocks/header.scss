@@ -1,0 +1,122 @@
+.header {
+    display: block;
+    height: 25.2rem;
+    max-width: 1440px;
+    padding-top: 2.6rem;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint($tablet-bp){
+        padding-top: 1rem;
+        height: auto;
+    }
+
+    @include breakpoint($mobile-bp){
+        height: auto;
+
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.header__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    flex: 1 0 auto;
+    order: 4;
+
+    text-align: right;
+}
+
+.header__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    @include breakpoint($mobile-bp){
+        height: 100%;
+    }
+
+    img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+    
+        object-fit: cover;
+    
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        z-index: 0;
+    }
+
+    &::before{
+        content: '';
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(#1F2021, .79);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 1;
+    }
+}
+
+.header__phone{
+    @include adaptive-font(24, 16);
+    font-weight: 700;
+}
+
+.header__call {
+    @include adaptive-font(18, 14);
+    font-weight: 400;
+}
+
+.header__logo {
+    margin-right: 12rem;
+
+    order: 2;
+
+    @include breakpoint($tablet-bp){
+        margin-right: 0;
+        margin-left: 12rem;
+    }
+
+    @include breakpoint($mobile-bp){
+        display: none;
+    }
+}
+
+.header__title{
+    display: block;
+
+    margin-top: 3.6rem;
+
+    @include adaptive-font(38, 30);
+    font-weight: 700;
+    line-height: 1;
+
+    position: relative;
+
+    @include breakpoint($tablet-bp){
+        margin-top: 2rem;
+    }
+}

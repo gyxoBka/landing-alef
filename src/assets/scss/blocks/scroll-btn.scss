@@ -1,0 +1,56 @@
+.scroll-btn{
+    display: block;
+
+    width: 6rem;
+    height: 6rem;
+
+    margin-top: 3.4rem;
+    margin-left: auto;
+
+    background-color: #6EBBD3;
+
+    visibility: visible;
+    opacity: 1;
+
+    position: relative;
+    z-index: 0;
+
+    &:hover{
+        background-color: lighten(#6EBBD3, 5%);
+    }
+
+    &:active{
+        background-color: darken(#6EBBD3, 2%);
+    }
+
+    &_hidden{
+        visibility: hidden;
+        opacity: 0;
+
+        transition: all .2s linear;
+    }
+
+    &::before{
+        content: '';
+
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background-image: url(../images/icon-arrow-right.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+    
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: all .2s ease;
+
+        z-index: 1;
+    }
+}
+
+.show-more + .scroll-btn{
+    margin-top: 0;
+}

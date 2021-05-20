@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Успей купить котика | mysite.ru"
+---
+
+<div class="container">
+    <div class="sort">
+        <div class="sort__title">Сортировать по:</div>
+
+        <ul class="sort__list">
+            <li class="sort__item">Цене
+                <div class="sort__item-arrow"></div>
+                <ul class="sort__type">
+                    <li class="sort__method" data-type="data-price" data-sort="descend">По убыванию</li>
+                    <li class="sort__method" data-type="data-price" data-sort="ascend">По возрастанию</li>
+                </ul>
+            </li>
+            <li class="sort__item">Возрасту
+                <div class="sort__item-arrow"></div>
+                <ul class="sort__type">
+                    <li class="sort__method" data-type="data-age" data-sort="descend">По убыванию</li>
+                    <li class="sort__method" data-type="data-age" data-sort="ascend">По возрастанию</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-wrapper"></div>
+    <button class="show-more">Показать еще <span class="show-more__num"></span></button>
+    <a class="scroll-btn" href="#top"></a>
+
+</div>
+
+<div class="notify"></div>

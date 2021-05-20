@@ -1,0 +1,15 @@
+.card-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-top: 3.8rem;
+
+    @include breakpoint($maxWidth){
+        justify-content: space-evenly;
+    }
+
+    @include breakpoint($tablet-bp){
+        margin-top: 2rem;
+    }
+}
