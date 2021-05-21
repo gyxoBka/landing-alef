@@ -51,7 +51,7 @@ const sortList = document.querySelector('.sort__list');
 const START_CARD_DRAW = 6;
 const CARD_DRAW_PER_RAW = 20;
 
-let cardDraw = 0, removeTimer = 0;
+let cardDraw = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     loadCards(0, START_CARD_DRAW);
